@@ -9,7 +9,7 @@ class Inventory:
         if type == "simples":
             return SimpleReport.generate(data_list)
         return CompleteReport.generate(data_list)
- 
+
     def import_data(path: str, type: str):
         if '.csv' in path:
             resposta = WorkedData.clean_csv(path)
