@@ -10,6 +10,9 @@ class SimpleReport:
             old_date = ToolsReport.oldest_fabric_date(data_list)
             next_date = ToolsReport.closet_valid_date(data_list)
             empresa = ToolsReport.most_products(data_list)
+            print("old_date >>>>>", old_date)
+            print("next_date >>>>>", next_date)
+            print("empresa >>>>>>>", empresa)
         finally:
             pass
         return (

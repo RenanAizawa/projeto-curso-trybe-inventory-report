@@ -11,7 +11,7 @@ def test_cria_produto():
         data_de_fabricacao=date(2023, 1, 1),
         data_de_validade=date(2023, 1, 31),
         numero_de_serie="123456789",
-        instrucoes_de_armazenamento="no gelo"
+        instrucoes_de_armazenamento="no gelo",
     )
     assert mock_product.id == 0
     assert mock_product.nome_do_produto == "manga hype"

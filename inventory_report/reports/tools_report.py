@@ -19,7 +19,7 @@ class ToolsReport:
         datas_validas = []
         for product in data_list:
             data_validade = datetime.strptime(
-                product["data_de_validade"], ("%y-%m-%d"))
+                product["data_de_validade"], "%Y-%m-%d")
             if data_validade > today:
                 datas_validas.append(data_validade)
         return min(datas_validas).date()
@@ -29,7 +29,7 @@ class ToolsReport:
         oldest_date = datetime.now()
         for product in data_list:
             fabric_date = datetime.strptime(
-                product["data_de_fabricacao"], ("%y-%m-%d"))
+                product["data_de_fabricacao"], "%Y-%m-%d")
             if fabric_date < oldest_date:
                 oldest_date = fabric_date
         return oldest_date.date()
