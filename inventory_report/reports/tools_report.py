@@ -4,8 +4,9 @@ class Tools_report:
     def most_products(data_list: list):
         company_count = {}
         for company in data_list:
-            if company["nome_da_empresa"] not in company_count.keys():
-                company_count[f"{company["nome_da_empresa"]}"] = 1
+            company_name = company["nome_da_empresa"]
+            if company_name not in company_count.keys():
+                company_count[f"{company_name}"] = 1
             else:
                 company_count[f"{company["nome_da_empresa"]}"] += 1
         return max(company_count)

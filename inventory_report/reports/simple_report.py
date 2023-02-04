@@ -11,5 +11,4 @@ class SimpleReport:
             f"Data de validade mais próxima: {data_val_mais_proxiself.tools_report.closet_valid_date(data_list)}\n"
             f"Empresa com mais produtos: {self.tools_report.most_products(data_list)}\n"
         )
-
-    def 
+        
