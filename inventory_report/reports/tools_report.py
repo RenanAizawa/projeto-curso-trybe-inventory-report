@@ -18,7 +18,8 @@ class Tools_report:
         today = datetime.now()
         datas_validas = []
         for product in data_list:
-            data_validade = datetime.strptime(product["data_de_validade"], format_date)
+            data_validade = datetime.strptime(
+                product["data_de_validade"], format_date)
             if data_validade > today:
                 datas_validas.append(data_validade)
         return min(datas_validas).date()
@@ -26,13 +27,14 @@ class Tools_report:
     def oldest_fabric_date(data_list: list, format_date):
         oldest_date = datetime.now()
         for product in data_list:
-            fabric_date = datetime.strptime(product["data_de_fabricacao"], format_date)
+            fabric_date = datetime.strptime(
+                product["data_de_fabricacao"], format_date)
             if fabric_date < oldest_date:
                 oldest_date = fabric_date
         return oldest_date.date()
 
-    def company_stock(data_list: list):
-        stock_dict = calculate_stock_company(data_list)
+    def company_stock(self, data_list: list):
+        stock_dict = self.calculate_stock_company(data_list)
         return "".join(stock_dict)
 
     def calculate_stock_company(data_list: list):
