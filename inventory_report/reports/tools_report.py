@@ -8,7 +8,7 @@ class Tools_report:
             if company_name not in company_count.keys():
                 company_count[f"{company_name}"] = 1
             else:
-                company_count[f"{company["nome_da_empresa"]}"] += 1
+                company_count[f"{company_name}"] += 1
         return max(company_count)
 
     def closet_valid_date(data_list: list):
