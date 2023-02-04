@@ -35,9 +35,22 @@ class ToolsReport:
         return oldest_date.date()
 
     @staticmethod
-    def company_stock(self, data_list: list):
-        stock_dict = self.calculate_stock_company(data_list)
-        return "".join(stock_dict)
+    def company_stock(data_list: list):
+        info_dict = ToolsReport.calculate_stock_company(data_list)
+        keys = info_dict.keys()
+        str_list = []
+        for key in keys:
+            value = info_dict[f"{key}"]
+            str_list.append(f"- {key}: {value}\n")
+        return "".join(str_list)
 
+    @staticmethod
     def calculate_stock_company(data_list: list):
-        pass
+        company_count = {}
+        for company in data_list:
+            company_name = company["nome_da_empresa"]
+            if company_name not in company_count.keys():
+                company_count[f"{company_name}"] = 1
+            else:
+                company_count[f"{company_name}"] += 1
+        return company_count
