@@ -11,7 +11,7 @@ class ToolsReport:
                 company_count[f"{company_name}"] = 1
             else:
                 company_count[f"{company_name}"] += 1
-        return sorted(company_count.items(), key= lambda t: t[1])[-1][0]
+        return sorted(company_count.items(), key=lambda t: t[1])[-1][0]
 
     @staticmethod
     def closet_valid_date(data_list: list):
