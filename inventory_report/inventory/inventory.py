@@ -8,7 +8,8 @@ class Inventory:
     def relatorio_type(data_list: list, type: str):
         if type == "simples":
             return SimpleReport.generate(data_list)
-        return CompleteReport.generate(data_list)
+        elif type == "completo":
+            return CompleteReport.generate(data_list)
 
     def import_data(path: str, type: str):
         if '.csv' in path:
